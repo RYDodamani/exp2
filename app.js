@@ -26,6 +26,11 @@ app.use('/users', usersRouter);
 app.use('/posts',postRoutes);
 app.use('/account',accountRoutes);
 
+// http://localhost:3000/files/images/hampi.jpg
+app.use('/files',express.static('public'));
+
+// http://localhost:3000/images/hampi.jpg
+app.use('/images',express.static(path.join(__dirname,'./public/images')))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
